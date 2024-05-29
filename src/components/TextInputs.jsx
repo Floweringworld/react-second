@@ -1,26 +1,30 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Textbox, TextBoxes, Input, TextBtn } from "../Style/Styled";
 
-const TextInputs = () => {
-  const [renderer, setRenderer] = useState([]);
-
+const TextInputs = ({ setPosts }) => {
   const dateRef = useRef("");
   const itemRef = useRef("");
   const numberRef = useRef("");
   const textRef = useRef("");
 
-  useEffect(() => {
-    dateRef.current.focus();
-  }, []);
-  const newDateRef = () => {};
   const onClick = () => {
-    console.log(
-      dateRef.current.value,
-      itemRef.current.value,
-      numberRef.current.value,
-      textRef.current.value
-    );
+    const newDate = {
+      id: new Date().getTime(),
+      date: dateRef.current.value,
+      item: itemRef.current.value,
+      number: numberRef.current.value,
+      text: textRef.current.value,
+    };
+    setPosts((prev) => [...prev, newDate]);
   };
+
+  useEffect(() => {
+    const localDate = localStorage.getItem("inputValue");
+    if (localDate) {
+      setPosts(JSON.parse(localDate));
+    }
+  }, []);
+
   return (
     <>
       <TextBoxes>

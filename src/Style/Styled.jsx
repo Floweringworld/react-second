@@ -63,8 +63,7 @@ export const MonthBtn = styled.button`
 //history
 export const StHistory = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   background-color: white;
   border-radius: 10px;
   gap: 20px;
@@ -75,9 +74,32 @@ export const StHistory = styled.div`
 
 export const HistoryComponent = styled.div`
   background-color: white;
-  color: #ffffff;
-  width: 100%;
-  height: 100px;
+  display: flex;
+  flex-direction: column;
   border-radius: 10px;
   box-shadow: 1px 1px 3px gray;
+  padding: 10px;
+  gap: 10px;
+`;
+
+export const HistoryValue = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+export const DateHistory = styled.p`
+  font-size: 12px;
+  text-align: right;
+`;
+
+export const ItemHistory = styled.p`
+  font-size: 12px;
+`;
+
+export const NumberHistory = styled.strong`
+  font-size: 20px;
+  color: blue;
+`;
+export const TextHistory = styled.strong`
+  font-size: 20px;
+  color: blue;
 `;
