@@ -12,12 +12,14 @@ const Home = () => {
   useEffect(() => {
     localStorage.setItem("inputValue", JSON.stringify(posts));
   }, [posts]);
+
+  const [month, setMonth] = useState(1);
   return (
     <>
       <Main>
         <TextInputs setPosts={setPosts} />
-        <Month posts={posts} />
-        <History posts={posts} />
+        <Month month={month} setMonth={setMonth} />
+        <History posts={posts} month={month} />
       </Main>
     </>
   );

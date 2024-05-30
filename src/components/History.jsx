@@ -8,10 +8,14 @@ import {
   HistoryValue,
 } from "../Style/Styled";
 
-const History = ({ posts }) => {
+const History = ({ posts, month }) => {
+  const filterPosts = posts.filter((post) => {
+    const date = new Date(post.date).getMonth() + 1;
+    return date === month;
+  });
   return (
     <StHistory>
-      {posts.map((list) => (
+      {filterPosts.map((list) => (
         <HistoryComponent key={list.id}>
           <HistoryValue>
             <ItemHistory>{list.item}</ItemHistory>

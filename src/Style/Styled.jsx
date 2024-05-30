@@ -103,3 +103,22 @@ export const TextHistory = styled.strong`
   font-size: 20px;
   color: blue;
 `;
+
+export const Container = styled.div`
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 16px;
+`;
+
+export const InputGroup = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+`;
+
+export const ButtonGroup = styled.div`
+  display: flex;
+  gap: 10px;
+`;

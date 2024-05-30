@@ -4,8 +4,6 @@ import Home from "./Home";
 import Detail from "./Detail";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <BrowserRouter>
